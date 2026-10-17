@@ -359,6 +359,53 @@ Eligible to vote
 
 ---
 
+## 6. Checking Whether a Number Is Even or Odd
+
+The **modulus operator (`%`)** returns the remainder after dividing one number by another. We can use it to determine whether a number is even or odd.
+
+- **Even number:** Divisible by `2` with a remainder of `0`.
+- **Odd number:** Divisible by `2` with a remainder of `1` (for positive integers).
+
+```javascript
+function isOddEven(num) {
+    let remainder = num % 2;
+
+    if (remainder === 0) {
+        console.log("Is Even");
+    } else {
+        console.log("Is Odd");
+    }
+}
+
+isOddEven(2);
+isOddEven(5);
+```
+
+**Output:**
+
+```text
+Is Even
+Is Odd
+```
+
+**Explanation:**
+
+1. `num % 2` calculates the remainder when the number is divided by `2`.
+2. If `remainder === 0`, the number is even.
+3. Otherwise, the number is odd.
+
+**Example:**
+
+| Number | Calculation | Result |
+|---:|---|---|
+| 2 | `2 % 2 = 0` | Even |
+| 5 | `5 % 2 = 1` | Odd |
+| 8 | `8 % 2 = 0` | Even |
+| 11 | `11 % 2 = 1` | Odd |
+
+**Key concept:** The modulus operator (`%`) is commonly used in DSA to check divisibility, identify even and odd numbers, and solve mathematical problems.
+---
+
 # 🎯 Learning Goals
 
 My goal is to progress from JavaScript fundamentals to advanced problem-solving concepts.
