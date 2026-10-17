@@ -79,3 +79,15 @@ This is my DSA notes
 
 // ===============================================
 
+// Square of a number using return
+
+// function square(x) {
+//     let result = x * x;
+//     return result;
+// }
+
+// let answer = square(2);
+// console.log(answer);
+
+// ===============================================
+
