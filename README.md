@@ -91,3 +91,27 @@ This is my DSA notes
 
 // ===============================================
 
+// Check wether the person is eligible to vote or not ?
+
+// function eligable(age) {
+//     if (age < 1) {
+//         console.log("Invalid");
+//     }
+//     else if (age < 15) {
+//         console.log("Not Elgible");
+//     }
+//     else if (age > 15 && age < 50) {
+//         console.log("Yes")
+//     }
+//     else {
+//         console.log("You are eligible to vote");
+//     }
+// }
+
+// eligable(15);
+// eligable(-20);
+// eligable(52);
+// eligable(25);
+
+// ===============================================
+
