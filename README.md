@@ -406,6 +406,51 @@ Is Odd
 **Key concept:** The modulus operator (`%`) is commonly used in DSA to check divisibility, identify even and odd numbers, and solve mathematical problems.
 ---
 
+## 7. Introduction to Loops in JavaScript
+
+Loops allow us to execute a block of code repeatedly without writing the same statements multiple times.
+
+### 🔹 Example 1: Printing Names Using a `for` Loop
+
+```javascript
+for (let i = 3; i < 15; i++) {
+    console.log("Charith");
+    console.log("Likhith");
+}
+```
+
+**Output:**
+
+```text
+Charith
+Likhith
+Charith
+Likhith
+Charith
+Likhith
+...
+```
+
+*The output repeats 12 times because the loop runs for `i = 3` through `i = 14`.*
+
+### 🧠 Understanding the `for` Loop
+
+```javascript
+for (initialization; condition; increment) {
+    // Code to execute repeatedly
+}
+```
+
+| Component | Explanation |
+|---|---|
+| `let i = 3` | Initializes the loop counter. |
+| `i < 15` | Continues the loop while the condition is true. |
+| `i++` | Increases `i` by 1 after each iteration. |
+
+**Key takeaway:** A `for` loop is useful when you know the condition that determines how many times a block of code should execute.
+
+---
+
 # 🎯 Learning Goals
 
 My goal is to progress from JavaScript fundamentals to advanced problem-solving concepts.
