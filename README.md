@@ -569,6 +569,86 @@ The only negative number is `-5`, so the function returns `1`.
 
 ---
 
+## 10. Finding the Largest Number in an Array
+
+**Problem Statement:** Write a function that returns the largest number present in an array.
+
+### 💻 JavaScript Solution
+
+```javascript
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+function largest(arr) {
+    let largestNum = -1;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > largestNum) {
+            largestNum = arr[i];
+        }
+    }
+
+    return largestNum;
+}
+
+let result = largest(arr);
+console.log(result);
+```
+
+### 📤 Output
+
+```text
+9
+```
+
+### 🧠 How It Works
+
+1. Initialize `largestNum` to `-1`.
+2. Iterate through the array using a `for` loop.
+3. Compare each element with the current `largestNum`.
+4. If the current element is greater, update `largestNum`.
+5. Return the largest value after checking all elements.
+
+### 📝 Example
+
+For the array:
+
+```javascript
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+The largest number is `9`.
+
+**Important:** Initializing the largest value to `-1` works for this example, but it fails for arrays containing only numbers smaller than `-1`. A more reliable approach is to initialize it with the first array element:
+
+```javascript
+function largest(arr) {
+    if (arr.length === 0) {
+        return undefined;
+    }
+
+    let largestNum = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > largestNum) {
+            largestNum = arr[i];
+        }
+    }
+
+    return largestNum;
+}
+```
+
+This version also handles arrays containing negative numbers correctly and returns `undefined` for an empty array.
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n)\) — each array element is checked at most once.
+- **Space Complexity:** \(O(1)\) — only a constant amount of extra space is used.
+
+**Key takeaway:** Track the current maximum and update it whenever you find a larger element. This is a fundamental pattern in array-based DSA problems.
+
+---
+
 # 🎯 Learning Goals
 
 My goal is to progress from JavaScript fundamentals to advanced problem-solving concepts.
