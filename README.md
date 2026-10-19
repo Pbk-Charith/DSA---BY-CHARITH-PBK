@@ -451,6 +451,66 @@ for (initialization; condition; increment) {
 
 ---
 
+## 8. Linear Search in an Array
+
+Linear Search is a simple searching algorithm that checks each element of an array one by one until the target element is found.
+
+**Problem Statement:** Write a function that searches for an element in an array and returns its index. If the element is not present, return `-1`.
+
+### 💻 JavaScript Solution
+
+```javascript
+function search(arr, x) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === x) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+let arr = [1, 2, 3, 4, 5];
+
+// Search for an existing element
+// let result = search(arr, 5);
+
+// Search for a missing element
+let result = search(arr, 6);
+
+console.log(result);
+```
+
+### 📤 Output
+
+```text
+-1
+```
+
+### 🧠 How It Works
+
+1. The `search()` function accepts an array (`arr`) and a target value (`x`).
+2. The `for` loop checks each array element from index `0` to the last index.
+3. If `arr[i] === x`, the function returns the index `i`.
+4. If no matching element is found, the function returns `-1`.
+
+### 📝 Examples
+
+| Target (`x`) | Result | Explanation |
+|---:|---:|---|
+| `3` | `2` | Element found at index `2`. |
+| `5` | `4` | Element found at index `4`. |
+| `6` | `-1` | Element not found in the array. |
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n)\) — in the worst case, every element is checked.
+- **Space Complexity:** \(O(1)\) — the algorithm uses constant extra space.
+
+**Key takeaway:** Linear Search works on both sorted and unsorted arrays and is one of the fundamental searching algorithms in DSA.
+
+---
+
 # 🎯 Learning Goals
 
 My goal is to progress from JavaScript fundamentals to advanced problem-solving concepts.
