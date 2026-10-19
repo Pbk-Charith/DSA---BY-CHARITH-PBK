@@ -511,6 +511,64 @@ console.log(result);
 
 ---
 
+## 9. Counting Negative Numbers in an Array
+
+**Problem Statement:** Write a function that counts and returns the total number of negative numbers present in an array.
+
+### 💻 JavaScript Solution
+
+```javascript
+let arr = [1, 2, 3, 4, -5, 6, 7, 8, 9];
+
+function countNegativeNumbers(arr) {
+    let count = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+let result = countNegativeNumbers(arr);
+console.log(result);
+```
+
+### 📤 Output
+
+```text
+1
+```
+
+### 🧠 How It Works
+
+1. Initialize `count = 0` to track the number of negative elements.
+2. Use a `for` loop to iterate through every element in the array.
+3. Check whether `arr[i] < 0`.
+4. If the condition is true, increment `count` by `1`.
+5. Return the final count after checking all elements.
+
+### 📝 Example
+
+For the array:
+
+```javascript
+[1, 2, 3, 4, -5, 6, 7, 8, 9]
+```
+
+The only negative number is `-5`, so the function returns `1`.
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n)\) — every element is checked once.
+- **Space Complexity:** \(O(1)\) — only a single counter variable is used.
+
+**Key takeaway:** Use a counter and a condition to count elements that satisfy a specific requirement. This pattern is useful in many DSA problems.
+
+---
+
 # 🎯 Learning Goals
 
 My goal is to progress from JavaScript fundamentals to advanced problem-solving concepts.
