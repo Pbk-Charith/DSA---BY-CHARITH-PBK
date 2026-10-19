@@ -10,19 +10,27 @@ This repository contains my notes, JavaScript fundamentals, coding examples, and
 
 ## 📚 Table of Contents
 
-- [Episode 1: JavaScript Fundamentals](#-episode-1-javascript-fundamentals)
-  - Hello World
-  - Variables and Strings
-  - Arrays and Array Concatenation
-  - Array Indexing and Nested Arrays
-  - Objects
-- [Episode 2: Functions and Control Flow](#-episode-2-functions-and-control-flow)
-  - Printing Hello World
-  - Functions with Parameters
-  - Adding Two Numbers
-  - Returning the Square of a Number
-  - Voting Eligibility Checker
-- [Learning Goals](#-learning-goals)
+- **[Episode 1: JavaScript Fundamentals](#-episode-1-javascript-fundamentals)**
+  - [1. Printing Hello World](#1-printing-hello-world)
+  - [2. Variables and String Concatenation](#2-variables-and-string-concatenation)
+  - [3. Arrays and Array Concatenation](#3-arrays-and-array-concatenation)
+  - [4. Accessing Array Elements](#4-accessing-array-elements)
+  - [5. Nested Arrays](#5-nested-arrays)
+  - [6. JavaScript Objects](#6-javascript-objects)
+
+- **[Episode 2: Functions and Control Flow](#-episode-2-functions-and-control-flow)**
+  - [1. Printing Hello World Using a Function](#1-printing-hello-world-using-a-function)
+  - [2. Functions with Parameters](#2-functions-with-parameters)
+  - [3. Creating a Function to Add Two Numbers](#3-creating-a-function-to-add-two-numbers)
+  - [4. Finding the Square of a Number Using `return`](#4-finding-the-square-of-a-number-using-return)
+  - [5. Checking Voting Eligibility Using Conditional Statements](#5-checking-voting-eligibility-using-conditional-statements)
+  - [6. Checking Whether a Number Is Even or Odd](#6-checking-whether-a-number-is-even-or-odd)
+  - [7. Introduction to Loops in JavaScript](#7-introduction-to-loops-in-javascript)
+  - [8. Linear Search in an Array](#8-linear-search-in-an-array)
+  - [9. Counting Negative Numbers in an Array](#9-counting-negative-numbers-in-an-array)
+  - [10. Finding the Largest Number in an Array](#10-finding-the-largest-number-in-an-array)
+
+- **[Learning Goals](#-learning-goals)**
 
 ---
 
