@@ -657,6 +657,72 @@ This version also handles arrays containing negative numbers correctly and retur
 
 ---
 
+## 11. Finding the Lowest Number in an Array
+
+**Problem Statement:** Write a function that returns the smallest number present in an array.
+
+### 💻 JavaScript Solution
+
+```javascript
+let arr = [1, 2, 3, 4, -5, 6, 7, 8, 9];
+
+function smallest(arr) {
+    if (arr.length === 0) {
+        return undefined;
+    }
+
+    let smallestNum = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < smallestNum) {
+            smallestNum = arr[i];
+        }
+    }
+
+    return smallestNum;
+}
+
+let result = smallest(arr);
+console.log(result);
+```
+
+### 📤 Output
+
+```text
+-5
+```
+
+### 🧠 How It Works
+
+1. Initialize `smallestNum` with the first element of the array.
+2. Use a `for` loop to iterate through the remaining elements.
+3. Compare each element with the current `smallestNum`.
+4. If the current element is smaller, update `smallestNum`.
+5. Return the smallest number after checking all elements.
+
+### 📝 Example
+
+For the array:
+
+```javascript
+[1, 2, 3, 4, -5, 6, 7, 8, 9]
+```
+
+The lowest number is `-5`.
+
+**Why initialize with `arr[0]`?**
+
+Initializing with the first element ensures that the function works correctly with positive numbers, negative numbers, and arrays containing only one element. The function returns `undefined` for an empty array.
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n)\) — each element is checked at most once.
+- **Space Complexity:** \(O(1)\) — only a constant amount of extra space is used.
+
+**Key takeaway:** Track the current minimum and update it whenever you find a smaller element. This is a fundamental pattern in array-based DSA problems.
+
+---
+
 # 🎯 Learning Goals
 
 My goal is to progress from JavaScript fundamentals to advanced problem-solving concepts.
