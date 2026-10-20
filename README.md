@@ -22,13 +22,14 @@ This repository contains my notes, JavaScript fundamentals, coding examples, and
   - [1. Printing Hello World Using a Function](#1-printing-hello-world-using-a-function)
   - [2. Functions with Parameters](#2-functions-with-parameters)
   - [3. Creating a Function to Add Two Numbers](#3-creating-a-function-to-add-two-numbers)
-  - [4. Finding the Square of a Number Using `return`](#4-finding-the-square-of-a-number-using-return)
+  - [4. Finding the Square of a Number Using return](#4-finding-the-square-of-a-number-using-return)
   - [5. Checking Voting Eligibility Using Conditional Statements](#5-checking-voting-eligibility-using-conditional-statements)
   - [6. Checking Whether a Number Is Even or Odd](#6-checking-whether-a-number-is-even-or-odd)
   - [7. Introduction to Loops in JavaScript](#7-introduction-to-loops-in-javascript)
   - [8. Linear Search in an Array](#8-linear-search-in-an-array)
   - [9. Counting Negative Numbers in an Array](#9-counting-negative-numbers-in-an-array)
   - [10. Finding the Largest Number in an Array](#10-finding-the-largest-number-in-an-array)
+  - [11. Finding the Smallest Number in an Array](#11-finding-the-smallest-number-in-an-array)
 
 - **[Learning Goals](#-learning-goals)**
 
