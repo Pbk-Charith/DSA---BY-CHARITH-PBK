@@ -580,23 +580,25 @@ The only negative number is `-5`, so the function returns `1`.
 
 ## 10. Finding the Largest Number in an Array
 
-**Problem Statement:** Write a function that returns the largest number present in an array.
+**Problem Statement:** Write a function that returns the largest number in an array.
 
-### 💻 JavaScript Solution
+There are two approaches to solve this problem: a basic approach and a robust approach with input validation.
+
+### 💻 Approach 1: Basic Solution
 
 ```javascript
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 function largest(arr) {
-    let largestNum = -1;
+    let max = -Infinity;
 
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > largestNum) {
-            largestNum = arr[i];
+        if (arr[i] > max) {
+            max = arr[i];
         }
     }
 
-    return largestNum;
+    return max;
 }
 
 let result = largest(arr);
@@ -611,50 +613,84 @@ console.log(result);
 
 ### 🧠 How It Works
 
-1. Initialize `largestNum` to `-1`.
+1. Initialize `max` to `-Infinity` so that negative numbers are handled correctly.
 2. Iterate through the array using a `for` loop.
-3. Compare each element with the current `largestNum`.
-4. If the current element is greater, update `largestNum`.
-5. Return the largest value after checking all elements.
+3. Compare each element with the current maximum.
+4. If the current element is greater, update `max`.
+5. Return the largest number after checking all elements.
 
-### 📝 Example
+**Example:**
 
-For the array:
+For the array `[1, 2, 3, 4, 5, 6, 7, 8, 9]`, the largest number is `9`.
 
-```javascript
-[1, 2, 3, 4, 5, 6, 7, 8, 9]
-```
+---
 
-The largest number is `9`.
+### 💻 Approach 2: Robust Solution with Input Validation
 
-**Important:** Initializing the largest value to `-1` works for this example, but it fails for arrays containing only numbers smaller than `-1`. A more reliable approach is to initialize it with the first array element:
+This approach checks whether the input is a valid array, handles empty arrays, and rejects non-numeric or non-finite values.
 
 ```javascript
-function largest(arr) {
-    if (arr.length === 0) {
-        return undefined;
+function findLargest(arr) {
+    if (!Array.isArray(arr)) {
+        return false;
     }
 
-    let largestNum = arr[0];
+    if (arr.length === 0) {
+        return null;
+    }
 
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > largestNum) {
-            largestNum = arr[i];
+    let max = -Infinity;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] !== "number" || !Number.isFinite(arr[i])) {
+            return false;
+        }
+
+        if (arr[i] > max) {
+            max = arr[i];
         }
     }
 
-    return largestNum;
+    return max;
 }
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+console.log(findLargest(arr));
+
+// Export the function for use in other Node.js files
+module.exports = { findLargest };
 ```
 
-This version also handles arrays containing negative numbers correctly and returns `undefined` for an empty array.
+### 📤 Output
+
+```text
+9
+```
+
+### 📝 Handling Different Inputs
+
+| Input | Return value | Reason |
+|---|---|---|
+| `[1, 5, 9, 3]` | `9` | Returns the largest number. |
+| `[-10, -3, -7]` | `-3` | Correctly handles negative numbers. |
+| `[]` | `null` | The array is empty. |
+| `"hello"` | `false` | The input is not an array. |
+| `[1, "5", 9]` | `false` | Contains a non-numeric value. |
 
 ### ⏱️ Time and Space Complexity
 
-- **Time Complexity:** \(O(n)\) — each array element is checked at most once.
+- **Time Complexity:** \(O(n)\) — each array element is checked once.
 - **Space Complexity:** \(O(1)\) — only a constant amount of extra space is used.
 
-**Key takeaway:** Track the current maximum and update it whenever you find a larger element. This is a fundamental pattern in array-based DSA problems.
+### 🔑 Key Takeaways
+
+- Use a loop to compare every element in an array.
+- Initialize the maximum to `-Infinity` to handle arrays containing negative numbers.
+- Input validation makes functions more reliable.
+- `module.exports` allows the function to be imported into another CommonJS Node.js file.
+
+**DSA Pattern:** Finding the maximum or minimum element is a fundamental array problem that builds the foundation for more advanced algorithms.
 
 ---
 
@@ -721,6 +757,70 @@ Initializing with the first element ensures that the function works correctly wi
 - **Space Complexity:** \(O(1)\) — only a constant amount of extra space is used.
 
 **Key takeaway:** Track the current minimum and update it whenever you find a smaller element. This is a fundamental pattern in array-based DSA problems.
+
+---
+
+## 12. Finding the Second Largest Number in an Array
+
+**Problem Statement:** Write a function that returns the second largest distinct number present in an array.
+
+### 💻 JavaScript Solution
+
+```javascript
+let arr = [15, 14, 19, 18, 6, 17];
+
+function secondLargest(arr) {
+    let firstLargest = -Infinity;
+    let secondLargest = -Infinity;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > firstLargest) {
+            secondLargest = firstLargest;
+            firstLargest = arr[i];
+        } else if (
+            arr[i] > secondLargest && arr[i] < firstLargest
+        ) {
+            secondLargest = arr[i];
+        }
+    }
+
+    return secondLargest === -Infinity ? undefined : secondLargest;
+}
+
+let result = secondLargest(arr);
+console.log(result);
+```
+
+### 📤 Output
+
+```text
+18
+```
+
+### 🧠 How It Works
+
+1. Initialize `firstLargest` and `secondLargest` to `-Infinity`.
+2. Iterate through the array using a `for` loop.
+3. If the current element is greater than `firstLargest`, move the previous largest value into `secondLargest` and update `firstLargest`.
+4. Otherwise, if the current element is smaller than `firstLargest` but greater than `secondLargest`, update `secondLargest`.
+5. Return the second largest distinct number. If no second distinct number exists, return `undefined`.
+
+### 📝 Example
+
+For the array:
+
+```javascript
+[15, 14, 19, 18, 6, 17]
+```
+
+The largest number is `19`, and the second largest number is `18`.
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n)\) — the array is traversed once.
+- **Space Complexity:** \(O(1)\) — only two variables are used to track the largest values.
+
+**Key takeaway:** Track the largest and second largest values in a single traversal instead of sorting the entire array. This is an efficient and commonly asked DSA interview problem.
 
 ---
 
