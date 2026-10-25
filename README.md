@@ -993,6 +993,77 @@ Count is: 25
 
 ---
 
+## 14. Printing a Pattern Using Nested Loops
+
+**Problem Statement:** Use nested `for` loops to print `"x"` multiple times and count the total number of executions of the inner loop.
+
+### 💻 JavaScript Solution
+
+```javascript
+let count = 0;
+
+for (let i = 0; i < 5; i++) {
+    for (let j = 0; j < i; j++) {
+        console.log("x");
+        count++;
+    }
+}
+
+console.log("=====================");
+console.log("Count is:", count);
+```
+
+### 📤 Output
+
+```text
+x
+x
+x
+x
+x
+x
+x
+x
+x
+x
+=====================
+Count is: 10
+```
+
+### 🧠 How It Works
+
+The outer loop runs from `i = 0` to `i = 4`. The inner loop executes only while `j < i`.
+
+| Outer Loop (`i`) | Inner Loop Executions | Count |
+|---:|---:|---:|
+| 0 | 0 | 0 |
+| 1 | 1 | 1 |
+| 2 | 2 | 3 |
+| 3 | 3 | 6 |
+| 4 | 4 | 10 |
+| **Total** | **10** | **10** |
+
+**Why does the count equal 10?**
+
+\[
+0 + 1 + 2 + 3 + 4 = 10
+\]
+
+When `i = 0`, the inner loop does not execute because `j < 0` is false from the beginning. For each subsequent outer-loop iteration, the inner loop executes one additional time.
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n^2)\) — the total number of inner-loop executions grows quadratically as the outer-loop limit increases.
+- **Space Complexity:** \(O(1)\) — only a constant amount of extra space is used.
+
+### 🔑 Key Takeaway
+
+The number of inner-loop iterations depends on the outer-loop variable. Unlike two nested loops that each run five times, this example executes the inner loop a total of only 10 times.
+
+
+
+---
+
 # 🎯 Learning Goals
 
 My goal is to progress from JavaScript fundamentals to advanced problem-solving concepts.
