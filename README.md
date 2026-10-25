@@ -32,11 +32,11 @@ This repository contains my notes, JavaScript fundamentals, coding examples, and
   - [11. Finding the Smallest Number in an Array](#11-finding-the-smallest-number-in-an-array)
   - [12. Finding the Second Largest Number in an Array](#12-finding-the-second-largest-number-in-an-array)
   - [13. Understanding Nested Loops in JavaScript](#13-understanding-nested-loops-in-javascript)
+  - [14. Printing a Pattern Using Nested Loops](#14-printing-a-pattern-using-nested-loops)
+  - [15. Understanding Nested Loops with Decrementing Inner Loop](#15-understanding-nested-loops-with-decrementing-inner-loop)
 
 - **[🎯 Learning Goals](#-learning-goals)**
 - **[💡 My Learning Philosophy](#-my-learning-philosophy)**
-
-- **[Learning Goals](#-learning-goals)**
 
 ---
 
@@ -1060,7 +1060,76 @@ When `i = 0`, the inner loop does not execute because `j < 0` is false from the 
 
 The number of inner-loop iterations depends on the outer-loop variable. Unlike two nested loops that each run five times, this example executes the inner loop a total of only 10 times.
 
+---
 
+## 15. Understanding Nested Loops with Decrementing Inner Loop
+
+**Problem Statement:** Use nested `for` loops to print the values of `i` and `j`, where the inner loop starts at `i` and decrements until `j` reaches `0`. Count the total number of inner-loop executions.
+
+### 💻 JavaScript Solution
+
+```javascript
+let count = 0;
+
+for (let i = 0; i < 3; i++) {
+    for (let j = i; j >= 0; j--) {
+        console.log(`i = ${i}   j = ${j}`);
+        count++;
+    }
+}
+
+console.log("=====================");
+console.log("Count is:", count);
+```
+
+### 📤 Output
+
+```text
+i = 0   j = 0
+i = 1   j = 1
+i = 1   j = 0
+i = 2   j = 2
+i = 2   j = 1
+i = 2   j = 0
+=====================
+Count is: 6
+```
+
+### 🧠 How It Works
+
+1. **Outer loop (`i`):** Runs from `0` to `2`.
+2. **Inner loop (`j`):** Starts at the current value of `i` and decreases by `1` until `j` becomes `-1`.
+3. **`count++`:** Increments the counter for every inner-loop execution.
+
+### 📝 Iteration Breakdown
+
+| Outer Loop (`i`) | Inner Loop Values (`j`) | Iterations |
+|---:|---|---:|
+| 0 | 0 | 1 |
+| 1 | 1, 0 | 2 |
+| 2 | 2, 1, 0 | 3 |
+| **Total** | | **6** |
+
+### 🔢 Count Calculation
+
+\[
+\text{Total Iterations} = 1 + 2 + 3 = 6
+\]
+
+For an outer loop running \(n\) times, this pattern executes the inner loop:
+
+\[
+\frac{n(n+1)}{2}
+\]
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n^2)\) — the total number of iterations grows quadratically.
+- **Space Complexity:** \(O(1)\) — only a constant amount of extra space is used.
+
+### 🔑 Key Takeaway
+
+The inner loop's starting value depends on the outer-loop variable. Since `j` starts at `i` and decreases to `0`, each outer iteration performs one more execution than the previous one.
 
 ---
 
