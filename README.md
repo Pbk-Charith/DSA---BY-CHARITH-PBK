@@ -10,7 +10,7 @@ This repository contains my notes, JavaScript fundamentals, coding examples, and
 
 ## 📚 Table of Contents
 
-- **[Episode 1: JavaScript Fundamentals](#-episode-1-javascript-fundamentals)**
+- **[🟢 Episode 1: JavaScript Fundamentals](#-episode-1-javascript-fundamentals)**
   - [1. Printing Hello World](#1-printing-hello-world)
   - [2. Variables and String Concatenation](#2-variables-and-string-concatenation)
   - [3. Arrays and Array Concatenation](#3-arrays-and-array-concatenation)
@@ -18,11 +18,11 @@ This repository contains my notes, JavaScript fundamentals, coding examples, and
   - [5. Nested Arrays](#5-nested-arrays)
   - [6. JavaScript Objects](#6-javascript-objects)
 
-- **[Episode 2: Functions and Control Flow](#-episode-2-functions-and-control-flow)**
+- **[🔵 Episode 2: Functions and Control Flow](#-episode-2-functions-and-control-flow)**
   - [1. Printing Hello World Using a Function](#1-printing-hello-world-using-a-function)
   - [2. Functions with Parameters](#2-functions-with-parameters)
   - [3. Creating a Function to Add Two Numbers](#3-creating-a-function-to-add-two-numbers)
-  - [4. Finding the Square of a Number Using return](#4-finding-the-square-of-a-number-using-return)
+  - [4. Finding the Square of a Number Using `return`](#4-finding-the-square-of-a-number-using-return)
   - [5. Checking Voting Eligibility Using Conditional Statements](#5-checking-voting-eligibility-using-conditional-statements)
   - [6. Checking Whether a Number Is Even or Odd](#6-checking-whether-a-number-is-even-or-odd)
   - [7. Introduction to Loops in JavaScript](#7-introduction-to-loops-in-javascript)
@@ -30,6 +30,11 @@ This repository contains my notes, JavaScript fundamentals, coding examples, and
   - [9. Counting Negative Numbers in an Array](#9-counting-negative-numbers-in-an-array)
   - [10. Finding the Largest Number in an Array](#10-finding-the-largest-number-in-an-array)
   - [11. Finding the Smallest Number in an Array](#11-finding-the-smallest-number-in-an-array)
+  - [12. Finding the Second Largest Number in an Array](#12-finding-the-second-largest-number-in-an-array)
+  - [13. Understanding Nested Loops in JavaScript](#13-understanding-nested-loops-in-javascript)
+
+- **[🎯 Learning Goals](#-learning-goals)**
+- **[💡 My Learning Philosophy](#-my-learning-philosophy)**
 
 - **[Learning Goals](#-learning-goals)**
 
@@ -905,6 +910,89 @@ The largest number is `2`, and the second-largest **distinct** number is `1`.
 
 ---
 
+## 12. Understanding Nested Loops in JavaScript
+
+**Concept:** A nested loop is a loop inside another loop. The inner loop completes all its iterations for every single iteration of the outer loop.
+
+### 💻 JavaScript Solution
+
+```javascript
+let count = 0;
+
+for (let i = 0; i < 5; i++) {
+    for (let j = 0; j < 5; j++) {
+        console.log(`i = ${i}   j = ${j}`);
+        count++;
+    }
+}
+
+console.log("=====================");
+console.log("Count is:", count);
+```
+
+### 📤 Output
+
+```text
+i = 0   j = 0
+i = 0   j = 1
+i = 0   j = 2
+i = 0   j = 3
+i = 0   j = 4
+i = 1   j = 0
+i = 1   j = 1
+i = 1   j = 2
+i = 1   j = 3
+i = 1   j = 4
+i = 2   j = 0
+i = 2   j = 1
+i = 2   j = 2
+i = 2   j = 3
+i = 2   j = 4
+i = 3   j = 0
+i = 3   j = 1
+i = 3   j = 2
+i = 3   j = 3
+i = 3   j = 4
+i = 4   j = 0
+i = 4   j = 1
+i = 4   j = 2
+i = 4   j = 3
+i = 4   j = 4
+=====================
+Count is: 25
+```
+
+### 🧠 How It Works
+
+1. **Outer loop (`i`):** Runs 5 times, from `0` to `4`.
+2. **Inner loop (`j`):** Runs 5 times for every iteration of the outer loop.
+3. **`count++`:** Increments the counter every time the inner loop executes.
+4. **Total iterations:** Each of the 5 outer-loop iterations triggers 5 inner-loop iterations.
+
+### 📝 Iteration Calculation
+
+\[
+\text{Total Iterations} = 5 \times 5 = 25
+\]
+
+| Outer Loop (`i`) | Inner Loop Iterations | Count Added |
+|---:|---|---:|
+| 0 | 0, 1, 2, 3, 4 | 5 |
+| 1 | 0, 1, 2, 3, 4 | 5 |
+| 2 | 0, 1, 2, 3, 4 | 5 |
+| 3 | 0, 1, 2, 3, 4 | 5 |
+| 4 | 0, 1, 2, 3, 4 | 5 |
+| **Total** | **25 iterations** | **25** |
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n^2)\) when both loops run `n` times.
+- **Space Complexity:** \(O(1)\) because only a constant amount of extra space is used.
+
+**Key takeaway:** Nested loops are commonly used in DSA for working with matrices, printing patterns, comparing array elements, and solving problems involving pairs of elements.
+
+---
+
 # 🎯 Learning Goals
 
 My goal is to progress from JavaScript fundamentals to advanced problem-solving concepts.
@@ -916,7 +1004,7 @@ My goal is to progress from JavaScript fundamentals to advanced problem-solving 
 - [x] Functions and parameters
 - [x] Return statements
 - [x] Conditional statements
-- [ ] Loops (`for`, `while`, `do...while`)
+- [x] Loops (`for`, `while`, `do...while`)
 - [ ] Array methods and common coding patterns
 - [ ] Time and space complexity
 - [ ] Searching and sorting algorithms
