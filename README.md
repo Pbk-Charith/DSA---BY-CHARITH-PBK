@@ -824,6 +824,87 @@ The largest number is `19`, and the second largest number is `18`.
 
 ---
 
+### Approach 2 : 
+
+**Problem Statement:** Write a function that finds and returns the second-largest **distinct** number in an array. If the array is empty or does not contain a second distinct number, return `null`. Negative numbers are not allowed in this solution.
+
+### 💻 JavaScript Solution
+
+```javascript
+let arr = [1, 2, 2];
+
+function findSecondLargest(arr) {
+    if (arr.length === 0) {
+        return null;
+    }
+
+    let first_lar = -Infinity;
+    let sec_lar = -Infinity;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) {
+            return "Negative numbers should not be there";
+        }
+
+        if (arr[i] > first_lar) {
+            sec_lar = first_lar;
+            first_lar = arr[i];
+        } else if (arr[i] > sec_lar && arr[i] !== first_lar) {
+            sec_lar = arr[i];
+        }
+    }
+
+    return sec_lar === -Infinity ? null : sec_lar;
+}
+
+let result = findSecondLargest(arr);
+console.log(result);
+```
+
+### 📤 Output
+
+```text
+1
+```
+
+### 🧠 How It Works
+
+1. Initialize `first_lar` and `sec_lar` to `-Infinity`.
+2. Iterate through the array using a `for` loop.
+3. If a number is greater than `first_lar`, move the current largest number into `sec_lar` and update `first_lar`.
+4. Otherwise, if the number is smaller than the largest but greater than the second largest, update `sec_lar`.
+5. Ignore duplicate occurrences of the largest number.
+6. Return the second-largest distinct number, or `null` if one does not exist.
+
+### 📝 Example
+
+For the array `[1, 2, 2]`:
+
+| Element | First Largest | Second Largest |
+|---:|---:|---:|
+| 1 | 1 | `-Infinity` |
+| 2 | 2 | 1 |
+| 2 | 2 | 1 |
+
+The largest number is `2`, and the second-largest **distinct** number is `1`.
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n)\) — the array is traversed once.
+- **Space Complexity:** \(O(1)\) — only two variables are used to track the largest values.
+
+### 🔑 Key Takeaways
+
+- Track the largest and second-largest values simultaneously.
+- Use `-Infinity` to initialize the variables so positive values can be compared correctly.
+- Use `!==` to prevent duplicates of the largest number from becoming the second largest.
+- Handle edge cases, such as empty arrays and arrays containing only one distinct value.
+
+**DSA Pattern:** This is a single-pass array problem that helps build your understanding of comparisons, loops, and maintaining multiple variables while traversing an array.
+
+
+---
+
 # 🎯 Learning Goals
 
 My goal is to progress from JavaScript fundamentals to advanced problem-solving concepts.
