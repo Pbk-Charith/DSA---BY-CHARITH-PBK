@@ -10,33 +10,8 @@ This repository contains my notes, JavaScript fundamentals, coding examples, and
 
 ## 📚 Table of Contents
 
-- **[🟢 Episode 1: JavaScript Fundamentals](#-episode-1-javascript-fundamentals)**
-  - [1. Printing Hello World](#1-printing-hello-world)
-  - [2. Variables and String Concatenation](#2-variables-and-string-concatenation)
-  - [3. Arrays and Array Concatenation](#3-arrays-and-array-concatenation)
-  - [4. Accessing Array Elements](#4-accessing-array-elements)
-  - [5. Nested Arrays](#5-nested-arrays)
-  - [6. JavaScript Objects](#6-javascript-objects)
-
-- **[🔵 Episode 2: Functions and Control Flow](#-episode-2-functions-and-control-flow)**
-  - [1. Printing Hello World Using a Function](#1-printing-hello-world-using-a-function)
-  - [2. Functions with Parameters](#2-functions-with-parameters)
-  - [3. Creating a Function to Add Two Numbers](#3-creating-a-function-to-add-two-numbers)
-  - [4. Finding the Square of a Number Using `return`](#4-finding-the-square-of-a-number-using-return)
-  - [5. Checking Voting Eligibility Using Conditional Statements](#5-checking-voting-eligibility-using-conditional-statements)
-  - [6. Checking Whether a Number Is Even or Odd](#6-checking-whether-a-number-is-even-or-odd)
-  - [7. Introduction to Loops in JavaScript](#7-introduction-to-loops-in-javascript)
-  - [8. Linear Search in an Array](#8-linear-search-in-an-array)
-  - [9. Counting Negative Numbers in an Array](#9-counting-negative-numbers-in-an-array)
-  - [10. Finding the Largest Number in an Array](#10-finding-the-largest-number-in-an-array)
-  - [11. Finding the Smallest Number in an Array](#11-finding-the-smallest-number-in-an-array)
-  - [12. Finding the Second Largest Number in an Array](#12-finding-the-second-largest-number-in-an-array)
-  - [13. Understanding Nested Loops in JavaScript](#13-understanding-nested-loops-in-javascript)
-  - [14. Printing a Pattern Using Nested Loops](#14-printing-a-pattern-using-nested-loops)
-  - [15. Understanding Nested Loops with Decrementing Inner Loop](#15-understanding-nested-loops-with-decrementing-inner-loop)
-
-- **[🎯 Learning Goals](#-learning-goals)**
-- **[💡 My Learning Philosophy](#-my-learning-philosophy)**
+<!-- START doctoc -->
+<!-- END doctoc -->
 
 ---
 
@@ -1199,6 +1174,71 @@ console.log(generateAtoZ());
 - **Space Complexity:** \(O(1)\) — the function always stores exactly 26 letters.
 
 **Key Takeaway:** ASCII character codes allow us to generate letters programmatically instead of writing each character manually. This approach is useful for learning loops, character manipulation, and string-based DSA problems.
+
+---
+## 17. Printing a Square Pattern Using Nested Loops
+
+**Problem Statement:** Write a program using nested `for` loops to print a square pattern of `x` characters with 4 rows and 4 columns.
+
+### 💻 JavaScript Solution
+
+```javascript
+let n = 4;
+
+for (let i = 0; i < n; i++) {
+    let row = " ";
+
+    for (let j = 0; j < n; j++) {
+        row = row + " x ";
+    }
+
+    console.log(row);
+}
+```
+
+### 📤 Output
+
+```text
+  x  x  x  x 
+  x  x  x  x 
+  x  x  x  x 
+  x  x  x  x 
+```
+
+### 🧠 How It Works
+
+1. **Initialize `n`:** Sets the size of the square to `4`.
+2. **Outer loop (`i`):** Runs 4 times, creating 4 rows.
+3. **Initialize `row`:** Starts with a single space for each new row.
+4. **Inner loop (`j`):** Runs 4 times during each outer-loop iteration.
+5. **Build the row:** `row = row + " x "` appends an `x` with spaces to the row string.
+6. **Print the row:** `console.log(row)` prints the completed row after the inner loop finishes.
+
+### 📝 Iteration Breakdown
+
+| Outer Loop (`i`) | Inner Loop Executions | Result |
+|---:|---:|---|
+| 0 | 4 | Prints row 1 |
+| 1 | 4 | Prints row 2 |
+| 2 | 4 | Prints row 3 |
+| 3 | 4 | Prints row 4 |
+| **Total** | **16** | **4 × 4 square** |
+
+### 🔢 Total Iterations
+
+\[
+\text{Total Iterations} = n \times n = 4 \times 4 = 16
+\]
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n^2)\) — the inner loop runs `n` times for each of the `n` outer-loop iterations.
+- **Auxiliary Space Complexity:** \(O(n)\) — the `row` string grows as the inner loop appends characters.
+
+### 🔑 Key Takeaway
+
+Nested loops are commonly used to print square, triangular, and other character patterns. The outer loop controls the **rows**, while the inner loop controls the **columns**.
+---
 
 # 🎯 Learning Goals
 
