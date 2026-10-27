@@ -1133,41 +1133,6 @@ The inner loop's starting value depends on the outer-loop variable. Since `j` st
 
 ---
 
-# 🎯 Learning Goals
-
-My goal is to progress from JavaScript fundamentals to advanced problem-solving concepts.
-
-- [x] JavaScript variables and data types
-- [x] Strings and concatenation
-- [x] Arrays and nested arrays
-- [x] Objects and properties
-- [x] Functions and parameters
-- [x] Return statements
-- [x] Conditional statements
-- [x] Loops (`for`, `while`, `do...while`)
-- [ ] Array methods and common coding patterns
-- [ ] Time and space complexity
-- [ ] Searching and sorting algorithms
-- [ ] Recursion and backtracking
-- [ ] Linked lists, stacks, and queues
-- [ ] Trees, graphs, and dynamic programming
-
----
-
-## 💡 My Learning Philosophy
-
-> **Consistency beats perfection. Learn the concept, write the code, understand the output, and practice until it becomes natural.**
-
-I'm documenting my DSA journey one concept at a time to improve my programming skills and prepare for technical interviews.
-
-⭐ If you're also learning DSA with JavaScript, feel free to explore this repository and learn along with me!
-
-**Author:** Charith PBK  
-**Language:** JavaScript  
-**Focus:** Data Structures and Algorithms (DSA)
-
----
-
 ## 16. Generating the Alphabet from A to Z Using ASCII Codes
 
 **Problem Statement:** Write a function that generates all uppercase English letters from `A` to `Z` and returns them in an array.
@@ -1234,5 +1199,40 @@ console.log(generateAtoZ());
 - **Space Complexity:** \(O(1)\) — the function always stores exactly 26 letters.
 
 **Key Takeaway:** ASCII character codes allow us to generate letters programmatically instead of writing each character manually. This approach is useful for learning loops, character manipulation, and string-based DSA problems.
+
+# 🎯 Learning Goals
+
+My goal is to progress from JavaScript fundamentals to advanced problem-solving concepts.
+
+- [x] JavaScript variables and data types
+- [x] Strings and concatenation
+- [x] Arrays and nested arrays
+- [x] Objects and properties
+- [x] Functions and parameters
+- [x] Return statements
+- [x] Conditional statements
+- [x] Loops (`for`, `while`, `do...while`)
+- [ ] Array methods and common coding patterns
+- [ ] Time and space complexity
+- [ ] Searching and sorting algorithms
+- [ ] Recursion and backtracking
+- [ ] Linked lists, stacks, and queues
+- [ ] Trees, graphs, and dynamic programming
+
+---
+
+## 💡 My Learning Philosophy
+
+> **Consistency beats perfection. Learn the concept, write the code, understand the output, and practice until it becomes natural.**
+
+I'm documenting my DSA journey one concept at a time to improve my programming skills and prepare for technical interviews.
+
+⭐ If you're also learning DSA with JavaScript, feel free to explore this repository and learn along with me!
+
+**Author:** Charith PBK  
+**Language:** JavaScript  
+**Focus:** Data Structures and Algorithms (DSA)
+
+---
 
 ---
