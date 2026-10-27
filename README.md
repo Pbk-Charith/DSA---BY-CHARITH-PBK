@@ -1165,3 +1165,74 @@ I'm documenting my DSA journey one concept at a time to improve my programming s
 **Author:** Charith PBK  
 **Language:** JavaScript  
 **Focus:** Data Structures and Algorithms (DSA)
+
+---
+
+## 16. Generating the Alphabet from A to Z Using ASCII Codes
+
+**Problem Statement:** Write a function that generates all uppercase English letters from `A` to `Z` and returns them in an array.
+
+### 💻 JavaScript Solution
+
+```javascript
+function generateAtoZ() {
+    const letters = [];
+
+    for (let code = 65; code <= 90; code++) {
+        letters.push(String.fromCharCode(code));
+    }
+
+    return letters;
+}
+
+module.exports = { generateAtoZ };
+```
+
+### 🧠 How It Works
+
+1. **Initialize an array:** `const letters = [];` creates an empty array to store the letters.
+2. **Loop through ASCII codes:** The `for` loop iterates from `65` to `90`.
+3. **Convert codes to characters:** `String.fromCharCode(code)` converts each numeric code into its corresponding uppercase letter.
+4. **Add letters to the array:** `letters.push()` adds each letter to the array.
+5. **Return the array:** `return letters;` returns all 26 uppercase letters.
+6. **Export the function:** `module.exports = { generateAtoZ };` makes the function available to other CommonJS Node.js files.
+
+### 📤 Example Usage and Output
+
+To test the function, call it from your JavaScript file:
+
+```javascript
+const { generateAtoZ } = require("./yourFileName");
+
+console.log(generateAtoZ());
+```
+
+**Output:**
+
+```text
+[
+  'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+  'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+  'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+]
+```
+
+*Replace `yourFileName` with your actual JavaScript filename, without the `.js` extension.*
+
+### 🔑 Important Concepts
+
+| Concept | Explanation |
+|---|---|
+| `String.fromCharCode()` | Converts a character code into a string character. |
+| `letters.push()` | Adds a new element to the end of an array. |
+| `return` | Sends the generated array back to the caller. |
+| `module.exports` | Exports the function for use in other CommonJS modules. |
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(1)\) — the loop always runs exactly 26 times.
+- **Space Complexity:** \(O(1)\) — the function always stores exactly 26 letters.
+
+**Key Takeaway:** ASCII character codes allow us to generate letters programmatically instead of writing each character manually. This approach is useful for learning loops, character manipulation, and string-based DSA problems.
+
+---
