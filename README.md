@@ -1239,6 +1239,97 @@ for (let i = 0; i < n; i++) {
 
 Nested loops are commonly used to print square, triangular, and other character patterns. The outer loop controls the **rows**, while the inner loop controls the **columns**.
 ---
+## 18. Printing a Growing Pattern Using Nested Loops
+
+**Problem Statement:** Use nested `for` loops to print a progressively growing pattern of `x` characters. The inner loop prints the row after adding each new character.
+
+### 💻 JavaScript Solution
+
+```javascript
+let n = 4;
+
+for (let i = 0; i < n; i++) {
+    let row = " ";
+
+    for (let j = 0; j < n; j++) {
+        row = row + " x ";
+        console.log(row);
+    }
+}
+```
+
+### 📤 Output
+
+```text
+  x
+  x  x
+  x  x  x
+  x  x  x  x
+  x
+  x  x
+  x  x  x
+  x  x  x  x
+  x
+  x  x
+  x  x  x
+  x  x  x  x
+  x
+  x  x
+  x  x  x
+  x  x  x  x
+```
+
+*The pattern above repeats four times because the outer loop runs four times.*
+
+### 🧠 How It Works
+
+1. **Outer loop (`i`):** Runs 4 times, from `0` to `3`.
+2. **Initialize `row`:** Each outer-loop iteration starts with a new string containing a space.
+3. **Inner loop (`j`):** Runs 4 times for each outer-loop iteration.
+4. **Build the pattern:** `row = row + " x "` adds another `x` to the existing string.
+5. **Print the row:** `console.log(row)` is inside the inner loop, so it prints the string after every addition.
+
+### 📝 Important Difference
+
+Compare the position of `console.log(row)` in these two examples.
+
+**Example 1: Inside the inner loop**
+
+```javascript
+for (let j = 0; j < n; j++) {
+    row = row + " x ";
+    console.log(row);
+}
+```
+
+Each row is printed progressively, producing four output lines per outer-loop iteration.
+
+**Example 2: Outside the inner loop**
+
+```javascript
+for (let j = 0; j < n; j++) {
+    row = row + " x ";
+}
+console.log(row);
+```
+
+The completed row is printed only once, producing one output line per outer-loop iteration.
+
+### 🔢 Total Executions
+
+\[
+\text{Total prints} = n \times n = 4 \times 4 = 16
+\]
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n^2)\) — the inner loop executes \(n\) times for each of the \(n\) outer-loop iterations.
+- **Auxiliary Space Complexity:** \(O(n)\) — the `row` string grows with each inner-loop iteration.
+
+### 🔑 Key Takeaway
+
+**The position of `console.log()` matters.** When it is inside the inner loop, intermediate results are printed. When it is outside the inner loop, only the completed row is printed.
+---
 
 # 🎯 Learning Goals
 
