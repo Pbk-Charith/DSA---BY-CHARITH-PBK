@@ -132,7 +132,6 @@ This repository contains my notes, JavaScript fundamentals, coding examples, and
     - [⏱️ Time and Space Complexity](#-time-and-space-complexity-13)
 - [🎯 Learning Goals](#-learning-goals)
   - [💡 My Learning Philosophy](#-my-learning-philosophy)
-  - [⬆️ Back to Table of Contents](#-back-to-table-of-contents)
 
 <!-- END doctoc -->
 
