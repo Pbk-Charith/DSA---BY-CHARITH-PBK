@@ -1437,6 +1437,131 @@ The completed row is printed only once, producing one output line per outer-loop
 
 **The position of `console.log()` matters.** When it is inside the inner loop, intermediate results are printed. When it is outside the inner loop, only the completed row is printed.
 ---
+## 19. Printing a Growing Pattern Using a Single Outer Loop
+
+**Problem Statement:** Use nested `for` loops to print a growing pattern of `x` characters, displaying the pattern after adding each character.
+
+### 💻 JavaScript Solution
+
+```javascript
+let n = 5;
+
+for (let i = 0; i < 1; i++) {
+    let row = " ";
+
+    for (let j = 0; j < n; j++) {
+        row = row + " x ";
+        console.log(row);
+    }
+}
+```
+
+### 📤 Output
+
+```text
+  x
+  x  x
+  x  x  x
+  x  x  x  x
+  x  x  x  x  x
+```
+
+### 🧠 How It Works
+
+1. **Initialize `n`:** Sets the number of `x` characters to `5`.
+2. **Outer loop (`i`):** Runs only once because the condition is `i < 1`.
+3. **Initialize `row`:** Starts with a string containing a space.
+4. **Inner loop (`j`):** Runs 5 times, from `0` to `4`.
+5. **Build the pattern:** `row = row + " x "` adds one more `x` during each iteration.
+6. **Print the row:** `console.log(row)` prints the updated pattern immediately after each addition.
+
+### 📝 Iteration Breakdown
+
+| Inner Loop (`j`) | Number of `x` Characters | Output |
+|---:|---:|---|
+| 0 | 1 | `x` |
+| 1 | 2 | `x x` |
+| 2 | 3 | `x x x` |
+| 3 | 4 | `x x x x` |
+| 4 | 5 | `x x x x x` |
+
+### 🔑 Key Takeaways
+
+- The outer loop runs once, so the pattern is generated only once.
+- The inner loop controls the number of `x` characters added.
+- Placing `console.log(row)` inside the inner loop prints the pattern progressively.
+- Changing `n` to `7`, for example, produces seven output lines, ending with seven `x` characters.
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n)\) loop iterations because the outer loop runs once and the inner loop runs `n` times.
+- **Space Complexity:** \(O(n)\) because the `row` string grows as characters are appended.
+
+**Key takeaway:** The outer loop controls how many times the pattern is repeated, while the inner loop controls how the pattern grows.
+---
+## 20. Reversing a Pattern Using Nested Loops
+
+**Problem Statement:** Write a JavaScript program using nested `for` loops to print a reverse pattern of `x` characters, starting with 5 characters and decreasing by 1 in each row.
+
+### 💻 JavaScript Solution
+
+```javascript
+let n = 5;
+
+for (let i = n; i >= 1; i--) {
+    let row = " ";
+
+    for (let j = 0; j < i; j++) {
+        row = row + " x ";
+    }
+
+    console.log(row);
+}
+```
+
+### 📤 Output
+
+```text
+  x  x  x  x  x
+  x  x  x  x
+  x  x  x
+  x  x
+  x
+```
+
+### 🧠 How It Works
+
+1. **Initialize `n`:** Sets the maximum number of `x` characters to `5`.
+2. **Outer loop (`i`):** Starts at `5` and decreases until `i` reaches `1`.
+3. **Initialize `row`:** Creates a fresh string for every row.
+4. **Inner loop (`j`):** Runs `i` times, adding one `x` during each iteration.
+5. **Print the row:** Displays the completed row after the inner loop finishes.
+
+### 📝 Iteration Breakdown
+
+| Outer Loop (`i`) | Inner Loop Executions | Number of `x` Characters |
+| ---------------: | --------------------: | -----------------------: |
+|                5 |                     5 |                        5 |
+|                4 |                     4 |                        4 |
+|                3 |                     3 |                        3 |
+|                2 |                     2 |                        2 |
+|                1 |                     1 |                        1 |
+
+### 🔑 Key Takeaways
+
+- Use `i--` to decrease the number of characters in each row.
+- The outer loop controls the number of rows.
+- The inner loop controls the number of characters in each row.
+- Moving `console.log(row)` outside the inner loop ensures that each completed row is printed only once.
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** (O(n^2)) — the total number of character additions grows quadratically.
+- **Auxiliary Space Complexity:** (O(n)) — the row string requires space proportional to its length.
+
+**Key takeaway:** To reverse a pattern, start the outer loop at `n` and decrement it until it reaches `1`.
+
+---
 
 # 🎯 Learning Goals
 
