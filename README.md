@@ -1612,5 +1612,6 @@ I'm documenting my DSA journey one concept at a time to improve my programming s
 **Focus:** Data Structures and Algorithms (DSA)
 
 ---
-
+---
+[⬆️ Back to Table of Contents](#-table-of-contents)
 ---
