@@ -1577,6 +1577,93 @@ for (let i = n; i >= 1; i--) {
 **Key takeaway:** To reverse a pattern, start the outer loop at `n` and decrement it until it reaches `1`.
 
 ---
+## 21. Printing a Number Triangle Pattern Using Nested Loops
+
+**Problem Statement:** Write a JavaScript program using nested `for` loops to print a right-angled triangle pattern of numbers, starting from `1` and increasing the number of elements in each row.
+
+### 💻 JavaScript Solution
+
+```javascript
+let n = 10;
+
+for (let i = 0; i < n; i++) {
+    let row = " ";
+
+    for (let j = 0; j <= i; j++) {
+        row = row + " " + (j + 1);
+    }
+
+    console.log(row);
+}
+```
+
+### 📤 Output
+
+```text
+  1
+  1 2
+  1 2 3
+  1 2 3 4
+  1 2 3 4 5
+  1 2 3 4 5 6
+  1 2 3 4 5 6 7
+  1 2 3 4 5 6 7 8
+  1 2 3 4 5 6 7 8 9
+  1 2 3 4 5 6 7 8 9 10
+```
+
+### 🧠 How It Works
+
+1. **Initialize `n`:** Sets the total number of rows to `10`.
+2. **Outer loop (`i`):** Runs from `0` to `9`, controlling the number of rows.
+3. **Initialize `row`:** Creates a new string for each row.
+4. **Inner loop (`j`):** Runs from `0` to `i`, adding numbers to the current row.
+5. **Generate numbers:** `j + 1` converts the zero-based loop counter into numbers starting from `1`.
+6. **Build the pattern:** `row = row + " " + (j + 1)` appends each number to the row.
+7. **Print the row:** `console.log(row)` displays the completed row after the inner loop finishes.
+
+### 📝 Iteration Breakdown
+
+| Outer Loop (`i`) | Inner Loop Executions | Numbers Printed |
+|---:|---:|---|
+| 0 | 1 | `1` |
+| 1 | 2 | `1 2` |
+| 2 | 3 | `1 2 3` |
+| 3 | 4 | `1 2 3 4` |
+| 4 | 5 | `1 2 3 4 5` |
+| ... | ... | ... |
+| 9 | 10 | `1 2 3 4 5 6 7 8 9 10` |
+
+### 🔢 Total Inner Loop Executions
+
+Each row adds one more iteration than the previous row.
+
+\[
+\text{Total Iterations} = \frac{n(n+1)}{2}
+\]
+
+For \(n = 10\):
+
+\[
+\frac{10(10+1)}{2} = 55
+\]
+
+Therefore, the inner loop executes **55 times** in total.
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n^2)\) — the inner loop performs an increasing number of operations for each row.
+- **Auxiliary Space Complexity:** \(O(n)\) — the current row string grows with the number of elements in that row.
+
+### 🔑 Key Takeaways
+
+- The outer loop controls the number of rows.
+- The inner loop controls how many numbers appear in each row.
+- `j + 1` helps print numbers beginning at `1` instead of `0`.
+- Placing `console.log(row)` outside the inner loop prints each completed row only once.
+
+**DSA Pattern:** Nested loops are useful for printing number patterns, understanding iteration counts, and developing the logical thinking required for more advanced DSA problems.
+---
 
 # 🎯 Learning Goals
 
