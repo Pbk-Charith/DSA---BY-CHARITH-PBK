@@ -147,7 +147,8 @@ This repository contains my notes, JavaScript fundamentals, coding examples, and
     - [🔢 Total Iterations](#-total-iterations-1)
     - [⏱️ Time and Space Complexity](#-time-and-space-complexity-15)
     - [🔑 Key Takeaways](#-key-takeaways-5)
-  - [**DSA Pattern:** This problem builds your understanding of nested loops, row-based logic, and number-pattern problems commonly asked in programming interviews.](#dsa-pattern-this-problem-builds-your-understanding-of-nested-loops-row-based-logic-and-number-pattern-problems-commonly-asked-in-programming-interviews)
+    - [Another Approach but same result...](#another-approach-but-same-result)
+    - [📤 Output](#-output-16)
 - [🎯 Learning Goals](#-learning-goals)
   - [💡 My Learning Philosophy](#-my-learning-philosophy)
 
