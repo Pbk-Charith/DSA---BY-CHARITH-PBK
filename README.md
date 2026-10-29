@@ -1673,7 +1673,86 @@ Therefore, the inner loop executes **55 times** in total.
 
 **DSA Pattern:** Nested loops are useful for printing number patterns, understanding iteration counts, and developing the logical thinking required for more advanced DSA problems.
 ---
+## 22. Printing a Number Triangle with Repeated Row Values
 
+**Problem Statement:** Write a JavaScript program using nested `for` loops to print a triangle in which each row contains the same number, repeated according to the row number.
+
+### 💻 JavaScript Solution
+
+```javascript
+let n = 5;
+
+for (let i = 0; i < n; i++) {
+    let row = " ";
+
+    for (let j = 0; j <= i; j++) {
+        row = row + " " + (i + 1);
+    }
+
+    console.log(row);
+}
+```
+
+### 📤 Output
+
+```text
+  1
+  2 2
+  3 3 3
+  4 4 4 4
+  5 5 5 5 5
+```
+
+### 🧠 How It Works
+
+1. **Initialize `n`:** Sets the number of rows to `5`.
+2. **Outer loop (`i`):** Runs from `0` to `4`, controlling the rows.
+3. **Initialize `row`:** Creates a new empty-style string for each row.
+4. **Inner loop (`j`):** Runs from `0` to `i`, determining how many times the current row number is repeated.
+5. **Repeat the row number:** `(i + 1)` produces the current row number, starting from `1`.
+6. **Build the pattern:** `row = row + " " + (i + 1)` appends the same number repeatedly.
+7. **Print the row:** `console.log(row)` displays the completed row after the inner loop finishes.
+
+### 📝 Iteration Breakdown
+
+| Outer Loop (`i`) | Printed Number (`i + 1`) | Inner Loop Executions | Output |
+|---:|---:|---:|---|
+| 0 | 1 | 1 | `1` |
+| 1 | 2 | 2 | `2 2` |
+| 2 | 3 | 3 | `3 3 3` |
+| 3 | 4 | 4 | `4 4 4 4` |
+| 4 | 5 | 5 | `5 5 5 5 5` |
+
+### 🔢 Total Iterations
+
+The inner loop executes 1 time in the first row, 2 times in the second row, and so on.
+
+\[
+\text{Total Iterations} = \frac{n(n+1)}{2}
+\]
+
+For \(n = 5\):
+
+\[
+\frac{5(5+1)}{2} = 15
+\]
+
+Therefore, the inner loop executes **15 times** in total.
+
+### ⏱️ Time and Space Complexity
+
+- **Time Complexity:** \(O(n^2)\) — the number of operations increases quadratically as the number of rows grows.
+- **Auxiliary Space Complexity:** \(O(n)\) — the `row` string grows with the number of elements in each row.
+
+### 🔑 Key Takeaways
+
+- The outer loop controls the row number.
+- The inner loop determines how many times the number appears in each row.
+- `i + 1` converts the zero-based loop counter into the desired number.
+- The expression `(i + 1)` remains constant throughout each row, so the same number is printed repeatedly.
+
+**DSA Pattern:** This problem builds your understanding of nested loops, row-based logic, and number-pattern problems commonly asked in programming interviews.
+---
 # 🎯 Learning Goals
 
 My goal is to progress from JavaScript fundamentals to advanced problem-solving concepts.
