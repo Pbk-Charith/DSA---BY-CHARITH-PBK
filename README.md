@@ -1765,6 +1765,7 @@ Therefore, the inner loop executes **15 times** in total.
 
 ### Another Approach but same result... 
 
+```javascript
 let n = 5;
 
 for (let i = 0; i <= n; i++) {
@@ -1776,6 +1777,8 @@ for (let i = 0; i <= n; i++) {
 
     console.log(row);
 }
+...
+
 
 ### 📤 Output
 
