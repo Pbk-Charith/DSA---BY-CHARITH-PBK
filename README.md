@@ -1761,6 +1761,30 @@ Therefore, the inner loop executes **15 times** in total.
 - The expression `(i + 1)` remains constant throughout each row, so the same number is printed repeatedly.
 
 **DSA Pattern:** This problem builds your understanding of nested loops, row-based logic, and number-pattern problems commonly asked in programming interviews.
+
+### Another Approach but same result... 
+
+let n = 5;
+
+for (let i = 0; i <= n; i++) {
+    let row = " ";
+
+    for (let j = 1; j <= i; j++) {
+        row = row + " " + i;
+    }
+
+    console.log(row);
+}
+
+### 📤 Output
+
+```text
+  1
+  2 2
+  3 3 3
+  4 4 4 4
+  5 5 5 5 5
+```
 ---
 # 🎯 Learning Goals
 
